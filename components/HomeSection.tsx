@@ -33,9 +33,15 @@ export default function HomeSection() {
         {/* Static Greeting */}
         <h1 className="text-6xl font-bold mb-4 relative z-10 text-center">Hi! I&apos;m <span>Matthew McDaniel</span></h1>
         <span ref={typedRef} className="text-2xl text-blue-600 mb-4 text-center relative z-10" />
-        <a href="#about" className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-500 transition relative z-10">
-            Download CV
+        <a 
+          href="https://docs.google.com/document/d/e/2PACX-1vSXmTvRVUn0vpZfm37gsVLOjorEnM3UF2N5IPmZ2qaqqeruKbSY53nAj5twwjFP8XPiUmIbzjV30k_m/pub" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-500 transition relative z-10"
+        >
+          📄 Resume
         </a>
+
     </section>
   );
 }
