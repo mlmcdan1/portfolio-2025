@@ -17,6 +17,7 @@ export default function HomeSection() {
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
+        showCursor: false,
       });
 
       return () => typed.destroy();
@@ -29,9 +30,7 @@ export default function HomeSection() {
         id="home" 
         className=" min-h-screen flex flex-col justify-center 
         items-center bg-white text-gray-900"
-        
         >
-     
         {/* Static Greeting */}
         <h1 className="text-6xl font-bold mb-4 relative z-10 text-center">Hi! I'm <span>Matthew McDaniel</span></h1>
         <span ref={typedRef} className="text-2xl text-blue-600 mb-4 text-center relative z-10" />

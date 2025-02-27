@@ -1,86 +1,67 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
-// React Icons
-import { FaReact, FaBootstrap, FaNodeJs, FaJava, FaPython } from 'react-icons/fa';
-import { TbBrandNextjs } from 'react-icons/tb';
-import { SiTailwindcss, SiSharp, SiCplusplus} from 'react-icons/si'
+export default function CounterSection() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
 
-export default function SkillSection() {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true); // Ensures the component only renders on the client side
+    }, []);
+
     return (
         <section
             id='section'
-            className='py-16 bg-white'
+            className='relative bg-fixed bg-cover bg-center bg-no-repeat py-16'
+            style={{ backgroundImage: "url('/images/sky-shot.jpg')" }}
+            ref={ref}
         >
-            <div className='container mx-auto px-8'>
-                {/* Heading */}
-                <div className='text-center mb-12'>
-                    <h2 className='text-4xl text-gray-800 font-bold'>
-                        My Skills & Tools
-                    </h2>
-                    <p className='text-gray-600 mt-2'>
-                        A snapshot of some technologies I use
-                    </p>
-                </div>
+            {/* Overlay */}
+            <div className='absolute inset-0 bg-black bg-opacity-50'></div>
 
-                {/* Skills Grid */}
-                {/* 4 columns on md screen, 2 columns on smaller screens */}
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-8 text-center'>
+            {/* Content */}
+            <div className='relative container mx-auto px-8'>
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white'>
 
-                    {/* React */}
-                    <div className='flex flex-col items-center'>
-                        <FaReact className='text-6xl text-blue-500 mb-2'/>
-                        <p className='font-semibold'>React</p>
+                    {/* Counter 1 */}
+                    <div data-aos="fade-up" data-aos-duration="800">
+                        {isClient && inView && (
+                            <CountUp start={0} end={309} duration={5} className='text-5xl font-bold' />
+                        )}
+                        <p className='mt-2 text-lg'>Cups of Coffee</p>
                     </div>
 
-                    {/* Next.js */}
-                    <div className='flex flex-col items-center'>
-                        <TbBrandNextjs className='text-6xl text-gray-800 mb-2'/>
-                        <p className='font-semibold'>Next.js</p>
+                    {/* Counter 2 */}
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        {isClient && inView && (
+                            <CountUp start={0} end={356} duration={5} className='text-5xl font-bold' />
+                        )}
+                        <p className='mt-2 text-lg'>Projects</p>
                     </div>
 
-                    {/* Tailwind CSS */}
-                    <div className='flex flex-col items-center'>
-                        <SiTailwindcss className='text-6xl text-blue-400 mb-2'/>
-                        <p className='font-semibold'>Tailwind CSS</p>
+                    {/* Counter 3 */}
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        {isClient && inView && (
+                            <CountUp start={0} end={30} duration={5} className='text-5xl font-bold' />
+                        )}
+                        <p className='mt-2 text-lg'>Clients</p>
                     </div>
 
-                    {/* Bootstrap */}
-                    <div className='flex flex-col items-center'>
-                        <FaBootstrap className='text-6xl text-purple-600 mb-2'/>
-                        <p className='font-semibold'>Bootstrap</p>
+                    {/* Counter 4 */}
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                        {isClient && inView && (
+                            <CountUp start={0} end={10} duration={5} className='text-5xl font-bold' />
+                        )}
+                        <p className='mt-2 text-lg'>Partners</p>
                     </div>
 
-                    {/* Node.js */}
-                    <div className='flex flex-col items-center'>
-                        <FaNodeJs className='text-6xl text-green-500 mb-2'/>
-                        <p className='font-semibold'>Node.js</p>
-                    </div>
-
-                    {/* C# */}
-                    <div className='flex flex-col items-center'>
-                        <SiSharp className='text-6xl text-purple-700 mb-2'/>
-                        <p className='font-semibold'>C#</p>
-                    </div>
-
-                    {/* Java */}
-                    <div className='flex flex-col items-center'>
-                        <FaJava className='text-6xl text-red-600 mb-2'/>
-                        <p className='font-semibold'>Java</p>
-                    </div>
-
-                    {/* Python */}
-                    <div className='flex flex-col items-center'>
-                        <FaPython className='text-6xl text-yellow-500 mb-2'/>
-                        <p className='font-semibold'>Python</p>
-                    </div>
-
-                    {/* C++ */}
-                    <div className='flex flex-col items-center'>
-                        <SiCplusplus className='text-6xl text-blue-700 mb-2'/>
-                        <p className='font-semibold'>C++</p>
-                    </div>
                 </div>
             </div>
         </section>

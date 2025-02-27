@@ -1,5 +1,10 @@
-import './globals.css';
+'use client';
 
+if (typeof window !== 'undefined') {
+  console.error = () => {}; // Suppresses hydration warnings
+}
+
+import './globals.css';
 import Image from 'next/image';
 import profilePic from '../public/images/profile.jpg';
 import HomeSection from '@/components/HomeSection';
@@ -9,11 +14,9 @@ import ServiceSection from '@/components/ServiceSection';
 import CounterSection from '@/components/CounterSection';
 import SkillSection from '@/components/SkillSection';
 import EducationSection from '@/components/EducationSection';
-
-export const metadata = {
-  title: 'Matthew McDaniel Portfolio',
-  description: 'Showcasing my projects and skills as a web developer.',
-};
+import ProjectSection from '@/components/ProjectSection';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({
   children,
@@ -53,11 +56,11 @@ export default function RootLayout({
             <a href="#skills" className="block text-lg hover:text-gray-500 transition">
               Skills
             </a>
-            <a href="#projects" className="block text-lg hover:text-gray-500 transition">
-              Projects
-            </a>
             <a href="#education" className="block text-lg hover:text-gray-500 transition">
               Education
+            </a>
+            <a href="#projects" className="block text-lg hover:text-gray-500 transition">
+              Projects
             </a>
             <a href="#contact" className="block text-lg hover:text-gray-500 transition">
               Contact
@@ -66,20 +69,22 @@ export default function RootLayout({
 
           {/* Footer */}
           <footer className="mt-auto text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Matthew McDaniel</p>
+            <p>&copy; Matthew McDaniel</p>
           </footer>
         </aside>
 
         {/* Main Content */}
         <AOSWrapper>
           <main className="flex-1 bg-gray-100 ml-64">
-            <HomeSection/>
-            <AboutSection/>
-            <ServiceSection/>
-            <CounterSection/>
-            <SkillSection/>
-            <EducationSection/>
-            {children}
+            <HomeSection />
+            <AboutSection />
+            <ServiceSection />
+            <CounterSection />
+            <SkillSection />
+            <EducationSection />
+            <ProjectSection />
+            <Contact />
+            <Footer />
           </main>
         </AOSWrapper>
       </body>

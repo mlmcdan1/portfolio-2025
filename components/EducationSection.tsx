@@ -71,7 +71,7 @@ export default function EducationSection() {
 
     return (
         <section
-            id='section'
+            id="education"
             className='bg-white py-16 px-4 sm:px-8'
         >
             <div className='max-w-3xl mx-auto'>
