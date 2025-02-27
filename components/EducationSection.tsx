@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 interface EducationItem {
     title: string;
-    content: JSX.Element;
+    content: React.ReactNode;
 }
 
 const educationData: EducationItem[] = [

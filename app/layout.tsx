@@ -18,11 +18,7 @@ import ProjectSection from '@/components/ProjectSection';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout() {
   return (
     <html lang="en">
       <body className="flex bg-white">

@@ -18,14 +18,14 @@ export default function AboutSection() {
                             Who Am I?
                         </h2>
                         <p className="text-lg text-gray-700 mb-4">
-                            <strong>Hi, I'm Matthew McDaniel.</strong> I am a passionate full-stack 
+                            <strong>Hi, I&apos;m Matthew McDaniel.</strong> I am a passionate full-stack 
                             web developer with a passion for building modern, responsive websites and
-                            applications. I focuse on creating clean, user-friendly designs to help 
+                            applications. I focus on creating clean, user-friendly designs to help 
                             bring ideas to life in the digital world.
                         </p>
                         <p className="text-lg text-gray-700">
                             Driven by a love for technology and innovation, I have successfully completed 
-                            multiple projects accross web development, software engineering, and design. I'm 
+                            multiple projects across web development, software engineering, and design. I&apos;m 
                             always learning and excited to take on new challenges.
                         </p>
                     </div>
@@ -90,7 +90,7 @@ export default function AboutSection() {
                     <div className="bg-blue-600 text-white py-8 px-12 rounded-lg
                     text-center animate-fadeInLeft">
                         <h2 className="text-2xl font-bold mb-4 pb-4 text-left">
-                            I have earned my certification in Full-Stack Web Develoment<br/> 
+                            I have earned my certification in Full-Stack Web Development<br/> 
                             from Michigan State University.
                         </h2>
                         <a 
