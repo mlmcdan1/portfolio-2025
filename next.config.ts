@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Enables static export
   images: {
-    unoptimized: true, // Fixes issues with Next.js image optimization
+    unoptimized: true, // Ensures images load properly
   },
-  basePath: "/portfolio-2025", // Required for GitHub Pages
-  assetPrefix: "/portfolio-2025",
+  distDir: ".next", // Default Next.js build folder (important for Vercel!)
 };
 
 module.exports = nextConfig;
