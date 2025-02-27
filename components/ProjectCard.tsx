@@ -7,13 +7,17 @@ type Project = {
   techStack: string[];
   imageUrl: string;
   repoLink: string;
-  liveLink?: string; // New prop for the deployed link
+  liveDemo?: string;
   reverse?: boolean;
 };
 
-const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUrl, repoLink, liveLink, reverse }) => {
+const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUrl, repoLink, liveDemo, reverse }) => {
   return (
-    <div className="bg-white overflow-hidden rounded-lg shadow-xl w-full flex flex-col mb-16 p-8"> 
+    <div
+      className="bg-white overflow-hidden rounded-lg shadow-xl w-full flex flex-col mb-16 p-8"
+      data-aos="fade-up" // ✅ Animation added to each card
+      data-aos-duration="800"
+    > 
       {/* Image and Text Section - Conditional Reverse */}
       <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center gap-8`}> 
         {/* Image Section */}
@@ -42,8 +46,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
               </div>
             ))}
           </div>
-
-          {/* GitHub & Deployed Links */}
+          {/* Links */}
           <div className="flex items-center mt-6 space-x-4">
             <a
               href={repoLink}
@@ -53,15 +56,14 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
             >
               🔗 GitHub Repo
             </a>
-
-            {liveLink && (
+            {liveDemo && (
               <a
-                href={liveLink}
+                href={liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-3 px-6 rounded-full font-bold border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-all"
               >
-                🚀 Deployed
+                🚀 Live Demo
               </a>
             )}
           </div>
