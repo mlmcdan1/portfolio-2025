@@ -7,11 +7,11 @@ type Project = {
   techStack: string[];
   imageUrl: string;
   repoLink: string;
-  liveDemo?: string;
+  liveLink?: string;
   reverse?: boolean;
 };
 
-const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUrl, repoLink, liveDemo, reverse }) => {
+const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUrl, repoLink, liveLink, reverse }) => {
   return (
     <div
       className="bg-white overflow-hidden rounded-lg shadow-xl w-full flex flex-col mb-16 p-8"
@@ -56,9 +56,9 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
             >
               🔗 GitHub Repo
             </a>
-            {liveDemo && (
+            {liveLink && (
               <a
-                href={liveDemo}
+                href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-3 px-6 rounded-full font-bold border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-all"
