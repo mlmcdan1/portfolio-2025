@@ -2,16 +2,17 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-white py-16 px-4 sm:px-8 text-center">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6 text-gray-900">Let&apos;s Connect</h2>
-        <p className="text-lg text-gray-700 mb-6">
+    <section id="contact" className="py-18 px-4 sm:px-8 text-center">
+      <div className="max-w-3xl mx-auto glass-panel glass-border px-10 py-14">
+        <span className="text-xs uppercase tracking-[0.4em] text-sky-300">Get In Touch</span>
+        <h2 className="text-4xl font-semibold mt-4 mb-6 text-slate-100">Let&apos;s Connect</h2>
+        <p className="text-lg text-slate-300/80 mb-6">
           Have a project in mind or just want to say hello? Feel free to reach out!
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a
             href="mailto:matthew.mcdanieliv@gmail.com"
-            className="py-3 px-6 rounded-full font-bold border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white transition-all"
+            className="py-3 px-6 rounded-full font-semibold border border-sky-400/60 text-sky-200 hover:bg-sky-400/80 hover:text-slate-950 transition-all duration-200 shadow-lg shadow-sky-500/20"
           >
             📧 Email Me
           </a>
@@ -19,7 +20,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/matthewlmcdanieliv/"
             target="_blank"
             rel="noopener noreferrer"
-            className="py-3 px-6 rounded-full font-bold border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white transition-all"
+            className="py-3 px-6 rounded-full font-semibold border border-white/20 text-slate-200 hover:bg-white/10 hover:text-white transition-all duration-200"
           >
             🔗 LinkedIn
           </a>
@@ -27,7 +28,7 @@ const Contact = () => {
             href="https://github.com/mlmcdan1"
             target="_blank"
             rel="noopener noreferrer"
-            className="py-3 px-6 rounded-full font-bold border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all"
+            className="py-3 px-6 rounded-full font-semibold border border-white/20 text-slate-200 hover:bg-white/10 hover:text-white transition-all duration-200"
           >
             💻 GitHub
           </a>

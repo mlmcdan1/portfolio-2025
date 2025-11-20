@@ -1,53 +1,72 @@
 'use client';
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 
+type Metric = {
+  label: string;
+  end: number;
+  suffix?: string;
+};
+
+const deliveryMetrics: Metric[] = [
+  { label: 'Projects delivered', end: 24, suffix: '+' },
+  { label: 'Emails optimized', end: 120, suffix: '+' },
+  { label: 'Average turnaround (days)', end: 10 },
+  { label: 'Active partnerships', end: 6 },
+];
+
 export default function CounterSection() {
-  const [rendered, setRendered] = useState(false);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.35 });
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    if (inView) setRendered(true); // Prevents multiple renders
+    if (inView) setAnimate(true);
   }, [inView]);
-
-  if (!rendered) return null; // Ensures it only runs once
 
   return (
     <section
-      id='section'
-      className='relative bg-fixed bg-cover bg-center bg-no-repeat py-16'
-      style={{ backgroundImage: "url('/images/sky-shot.jpg')" }}
+      id='momentum'
+      className='relative py-18'
       ref={ref}
     >
-      {/* Overlay */}
-      <div className='absolute inset-0 bg-black bg-opacity-50'></div>
+      <div className='absolute inset-0 bg-[url("/images/sky-shot.jpg")] bg-cover bg-center opacity-10' aria-hidden />
+      <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-900/70' aria-hidden />
 
-      {/* Content */}
-      <div className='relative container mx-auto px-8'>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white'>
+      <div className='relative max-w-6xl mx-auto px-6 md:px-12'>
+        <div className='text-center mb-14'>
+          <span className='text-sky-300 uppercase tracking-[0.4em] text-xs'>
+            Momentum
+          </span>
+          <h2 className='mt-3 text-4xl font-semibold text-slate-100'>
+            Shipping meaningful work at a fast clip
+          </h2>
+          <p className='mt-4 text-slate-300/80 max-w-2xl mx-auto'>
+            Lean workflows, automation, and collaborative tooling keep projects moving from kickoff to deployment.
+          </p>
+        </div>
 
-          <div data-aos="fade-up" data-aos-duration="800">
-            {inView && <CountUp start={0} end={309} duration={5} className='text-5xl font-bold' />}
-            <p className='mt-2 text-lg'>Cups of Coffee</p>
-          </div>
-
-          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-            {inView && <CountUp start={0} end={356} duration={5} className='text-5xl font-bold' />}
-            <p className='mt-2 text-lg'>Projects</p>
-          </div>
-
-          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-            {inView && <CountUp start={0} end={30} duration={5} className='text-5xl font-bold' />}
-            <p className='mt-2 text-lg'>Clients</p>
-          </div>
-
-          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-            {inView && <CountUp start={0} end={10} duration={5} className='text-5xl font-bold' />}
-            <p className='mt-2 text-lg'>Partners</p>
-          </div>
-
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          {deliveryMetrics.map((metric, index) => (
+            <div
+              key={metric.label}
+              className='glass-panel glass-border px-8 py-10 text-center flex flex-col items-center justify-center'
+              data-aos='fade-up'
+              data-aos-duration='800'
+              data-aos-delay={index * 140}
+            >
+              <span className='text-5xl font-bold text-slate-50'>
+                {animate ? (
+                  <CountUp end={metric.end} suffix={metric.suffix ?? ''} duration={2.4} />
+                ) : (
+                  `0${metric.suffix ?? ''}`
+                )}
+              </span>
+              <p className='mt-4 text-sm uppercase tracking-[0.3em] text-slate-300'>
+                {metric.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

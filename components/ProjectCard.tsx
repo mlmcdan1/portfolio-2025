@@ -14,12 +14,12 @@ type Project = {
 const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUrl, repoLink, liveLink, reverse }) => {
   return (
     <div
-      className="bg-white overflow-hidden rounded-lg shadow-xl w-full flex flex-col mb-16 p-8"
+      className="glass-panel glass-border overflow-hidden w-full flex flex-col mb-16 p-10"
       data-aos="fade-up" // ✅ Animation added to each card
       data-aos-duration="800"
     > 
       {/* Image and Text Section - Conditional Reverse */}
-      <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center gap-8`}> 
+      <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center gap-10`}> 
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center">
           <Image
@@ -27,32 +27,35 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
             alt={title}
             width={1280} 
             height={720} 
-            className="rounded-lg shadow-lg w-full max-w-[90%] md:max-w-full"
+            className="rounded-2xl shadow-2xl shadow-slate-900/60 border border-white/10 w-full max-w-[90%] md:max-w-full"
           />
         </div>
         
         {/* Text Section */}
-        <div className="w-full md:w-1/2 px-6 py-8 flex flex-col items-start text-center md:text-left">
-          <h2 className="mb-4 text-gray-900 text-2xl sm:text-3xl font-extrabold">
+        <div className="w-full md:w-1/2 px-2 md:px-6 py-6 flex flex-col items-start text-center md:text-left">
+          <span className="text-xs uppercase tracking-[0.4em] text-sky-300">
+            Case Study
+          </span>
+          <h2 className="mb-4 text-slate-50 text-3xl font-semibold mt-3">
             {title}
           </h2>
-          <p className="text-lg sm:text-xl mb-4 text-gray-800 leading-relaxed">
+          <p className="text-base sm:text-lg mb-6 text-slate-200/85 leading-relaxed">
             {description}
           </p>
-          <div className="mt-4 w-full flex flex-wrap gap-3 justify-center md:justify-start">
+          <div className="mt-2 w-full flex flex-wrap gap-3 justify-center md:justify-start">
             {techStack.map((tech, index) => (
-              <div key={index} className="flex items-center py-2 px-4 bg-gray-200 rounded-lg shadow-sm text-gray-900 text-sm font-semibold">
+              <div key={index} className="flex items-center py-1.5 px-4 rounded-full text-slate-100 text-xs font-semibold bg-white/5 border border-white/10 backdrop-blur">
                 {tech}
               </div>
             ))}
           </div>
           {/* Links */}
-          <div className="flex items-center mt-6 space-x-4">
+          <div className="flex flex-wrap items-center mt-8 gap-4">
             <a
               href={repoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-3 px-6 rounded-full font-bold border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white transition-all"
+              className="py-3 px-6 rounded-full font-semibold border border-sky-400/60 text-sky-200 hover:bg-sky-400/80 hover:text-slate-950 transition-all duration-200 shadow-lg shadow-sky-500/20"
             >
               🔗 GitHub Repo
             </a>
@@ -61,7 +64,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-6 rounded-full font-bold border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-all"
+                className="py-3 px-6 rounded-full font-semibold border border-emerald-400/60 text-emerald-200 hover:bg-emerald-400/80 hover:text-slate-950 transition-all duration-200 shadow-lg shadow-emerald-500/20"
               >
                 🚀 Live Demo
               </a>

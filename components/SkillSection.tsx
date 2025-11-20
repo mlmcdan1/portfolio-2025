@@ -1,67 +1,75 @@
 'use client';
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 
-export default function CounterSection() {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.5,
-    });
+type Metric = {
+    label: string;
+    end: number;
+    suffix?: string;
+    delay?: number;
+};
 
-    const [isClient, setIsClient] = useState(false);
+const metrics: Metric[] = [
+    { label: 'Digital products launched', end: 12, suffix: '+' },
+    { label: 'Experiments shipped', end: 48, suffix: '+' },
+    { label: 'Avg. Lighthouse score', end: 92, suffix: '%' },
+    { label: 'Client retention', end: 93, suffix: '%' },
+];
+
+export default function SkillSection() {
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
+    const [shouldAnimate, setShouldAnimate] = useState(false);
 
     useEffect(() => {
-        setIsClient(true); // Ensures the component only renders on the client side
-    }, []);
+        if (inView) {
+            setShouldAnimate(true);
+        }
+    }, [inView]);
 
     return (
         <section
-            id='section'
-            className='relative bg-fixed bg-cover bg-center bg-no-repeat py-16'
-            style={{ backgroundImage: "url('/images/sky-shot.jpg')" }}
+            id='skills'
+            className='relative py-18'
             ref={ref}
         >
-            {/* Overlay */}
-            <div className='absolute inset-0 bg-black bg-opacity-50'></div>
+            <div className='absolute inset-0 bg-[url("/images/sky-shot.jpg")] bg-cover bg-center opacity-20' aria-hidden />
+            <div className='absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-900/60' aria-hidden />
 
-            {/* Content */}
-            <div className='relative container mx-auto px-8'>
-                <div className='grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white'>
+            <div className='relative max-w-6xl mx-auto px-6 md:px-12'>
+                <div className='text-center mb-14'>
+                    <span className='text-sky-300 uppercase tracking-[0.4em] text-xs'>
+                        Capabilities
+                    </span>
+                    <h2 className='mt-3 text-4xl font-semibold text-slate-100'>
+                        What working together unlocks
+                    </h2>
+                    <p className='mt-4 text-slate-300/80 max-w-2xl mx-auto'>
+                        A blend of product thinking, clean engineering, and iterative experimentation that keeps teams shipping with confidence.
+                    </p>
+                </div>
 
-                    {/* Counter 1 */}
-                    <div data-aos="fade-up" data-aos-duration="800">
-                        {isClient && inView && (
-                            <CountUp start={0} end={309} duration={5} className='text-5xl font-bold' />
-                        )}
-                        <p className='mt-2 text-lg'>Cups of Coffee</p>
-                    </div>
-
-                    {/* Counter 2 */}
-                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                        {isClient && inView && (
-                            <CountUp start={0} end={356} duration={5} className='text-5xl font-bold' />
-                        )}
-                        <p className='mt-2 text-lg'>Projects</p>
-                    </div>
-
-                    {/* Counter 3 */}
-                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                        {isClient && inView && (
-                            <CountUp start={0} end={30} duration={5} className='text-5xl font-bold' />
-                        )}
-                        <p className='mt-2 text-lg'>Clients</p>
-                    </div>
-
-                    {/* Counter 4 */}
-                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-                        {isClient && inView && (
-                            <CountUp start={0} end={10} duration={5} className='text-5xl font-bold' />
-                        )}
-                        <p className='mt-2 text-lg'>Partners</p>
-                    </div>
-
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                    {metrics.map((metric, index) => (
+                        <div
+                            key={metric.label}
+                            className='glass-panel glass-border px-8 py-10 text-center flex flex-col items-center justify-center'
+                            data-aos='fade-up'
+                            data-aos-duration='800'
+                            data-aos-delay={index * 120}
+                        >
+                            <span className='text-5xl font-bold text-slate-50'>
+                                {shouldAnimate ? (
+                                    <CountUp end={metric.end} suffix={metric.suffix ?? ''} duration={2.6} />
+                                ) : (
+                                    `0${metric.suffix ?? ''}`
+                                )}
+                            </span>
+                            <p className='mt-4 text-sm uppercase tracking-[0.3em] text-slate-300'>
+                                {metric.label}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

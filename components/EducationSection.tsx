@@ -72,15 +72,15 @@ export default function EducationSection() {
     return (
         <section
             id="education"
-            className='bg-white py-16 px-4 sm:px-8'
+            className='py-16 px-4 sm:px-8'
         >
             <div className='max-w-3xl mx-auto'>
                 {/* Heading */}
                 <div className='mb-12 text-center'>
-                    <span className='block text-blue-600 text-sm uppercase tracking-widest mb-2'>
+                    <span className='block text-sky-300 text-xs uppercase tracking-[0.4em] mb-3'>
                         Education
                     </span>
-                    <h2 className='text-4xl font-bold text-gray-800'>
+                    <h2 className='text-4xl font-semibold text-slate-100'>
                         Education
                     </h2>
                 </div>
@@ -90,26 +90,26 @@ export default function EducationSection() {
                     {educationData.map((item, index) => (
                         <div
                             key={index}
-                            className='borer border-gray-200 rounded shadow-sm mb-6'
+                            className='glass-panel glass-border mb-6'
                             data-aos="fade-up"
                         >
                             {/* Panel Heading */}
                             <button
                                 onClick={() => togglePanel(index)}
-                                className='w-full flex justify-between items-center px-4 py-3
-                                text-left bg-gray-100 hover:bg-gray-200 transition'
+                                className='w-full flex justify-between items-center px-6 py-4
+                                text-left bg-transparent hover:bg-white/5 transition rounded-2xl'
                             >
-                            <h4 className='font-semibold text-gray-700'>
+                            <h4 className='font-semibold text-slate-100 tracking-tight'>
                                 {item.title}
                             </h4>
-                            <span className='text-black text-xl'>
-                                {openIndex === index ? '-' : '+'}
+                            <span className='text-sky-300 text-2xl'>
+                                {openIndex === index ? '−' : '+'}
                             </span>
                         </button>
 
                         {/* Panel Content */}
                         {openIndex === index && (
-                            <div className='px-4 py-3 bg-white text-gray-700'>
+                            <div className='px-6 pb-6 text-slate-200/85 leading-relaxed'>
                                 {item.content}
                             </div>
                         )} 
