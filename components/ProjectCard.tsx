@@ -13,11 +13,7 @@ type Project = {
 
 const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUrl, repoLink, liveLink, reverse }) => {
   return (
-    <div
-      className="glass-panel glass-border overflow-hidden w-full flex flex-col mb-16 p-10"
-      data-aos="fade-up" // ✅ Animation added to each card
-      data-aos-duration="800"
-    > 
+    <div className="editorial-card overflow-hidden w-full flex flex-col mb-16 p-10">
       {/* Image and Text Section - Conditional Reverse */}
       <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center gap-10`}> 
         {/* Image Section */}
@@ -33,18 +29,18 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
         
         {/* Text Section */}
         <div className="w-full md:w-1/2 px-2 md:px-6 py-6 flex flex-col items-start text-center md:text-left">
-          <span className="text-xs uppercase tracking-[0.4em] text-sky-300">
-            Case Study
+          <span className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+            Project
           </span>
-          <h2 className="mb-4 text-slate-50 text-3xl font-semibold mt-3">
+          <h2 className="mb-4 text-[var(--ink)] text-3xl font-semibold mt-3">
             {title}
           </h2>
-          <p className="text-base sm:text-lg mb-6 text-slate-200/85 leading-relaxed">
+          <p className="text-base sm:text-lg mb-6 text-[var(--muted)] leading-relaxed">
             {description}
           </p>
           <div className="mt-2 w-full flex flex-wrap gap-3 justify-center md:justify-start">
             {techStack.map((tech, index) => (
-              <div key={index} className="flex items-center py-1.5 px-4 rounded-full text-slate-100 text-xs font-semibold bg-white/5 border border-white/10 backdrop-blur">
+              <div key={index} className="flex items-center py-1.5 px-4 rounded-full text-[var(--muted)] text-xs font-semibold border border-black/10 bg-white">
                 {tech}
               </div>
             ))}
@@ -55,7 +51,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
               href={repoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-3 px-6 rounded-full font-semibold border border-sky-400/60 text-sky-200 hover:bg-sky-400/80 hover:text-slate-950 transition-all duration-200 shadow-lg shadow-sky-500/20"
+              className="py-3 px-6 rounded-full font-semibold border border-blue-500/40 text-[var(--blue)] hover:bg-blue-500/10 transition-all duration-200"
             >
               🔗 GitHub Repo
             </a>
@@ -64,7 +60,7 @@ const ProjectCard: React.FC<Project> = ({ title, description, techStack, imageUr
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-6 rounded-full font-semibold border border-emerald-400/60 text-emerald-200 hover:bg-emerald-400/80 hover:text-slate-950 transition-all duration-200 shadow-lg shadow-emerald-500/20"
+                className="py-3 px-6 rounded-full font-semibold border border-green-500/40 text-[var(--green)] hover:bg-green-500/10 transition-all duration-200"
               >
                 🚀 Live Demo
               </a>

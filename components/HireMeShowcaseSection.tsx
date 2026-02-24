@@ -58,9 +58,9 @@ const templates: Template[] = [
 ];
 
 const accentGradients = [
-    "from-sky-500/20 via-slate-900/90 to-slate-900/70",
-    "from-purple-500/20 via-slate-900/90 to-slate-900/70",
-    "from-emerald-500/20 via-slate-900/90 to-slate-900/70",
+    "from-[#f5f5f5] via-[#fbfbfb] to-white",
+    "from-[#f5f5f5] via-[#fbfbfb] to-white",
+    "from-[#f5f5f5] via-[#fbfbfb] to-white",
 ];
 
 function TemplateCard({ template, idx }: { template: Template; idx: number }) {
@@ -107,17 +107,13 @@ function TemplateCard({ template, idx }: { template: Template; idx: number }) {
             className="max-w-5xl mx-auto w-full"
         >
             <div
-                className={`relative overflow-hidden rounded-[32px] border border-white/5 bg-gradient-to-br ${
+                className={`relative overflow-hidden rounded-[32px] border border-black/10 bg-gradient-to-br ${
                     accentGradients[idx % accentGradients.length]
-                } shadow-xl shadow-slate-950/40`}
+                } shadow-[0_20px_40px_-28px_rgba(0,0,0,0.25)]`}
             >
-                <div className="absolute inset-0 opacity-25 mix-blend-screen pointer-events-none">
-                    <div className="absolute -top-16 right-8 h-48 w-48 rounded-full bg-white/10 blur-[120px]" />
-                    <div className="absolute -bottom-16 left-4 h-48 w-48 rounded-full bg-white/10 blur-[120px]" />
-                </div>
                 <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-12 p-8 lg:p-10 items-center">
                     <div className="w-full lg:w-3/5">
-                        <div className="relative w-full overflow-hidden rounded-3xl bg-slate-950/60 aspect-[16/9]">
+                        <div className="relative w-full overflow-hidden rounded-3xl bg-white aspect-[16/9] border border-black/15">
                             {showVideo && template.video ? (
                                 <video
                                     ref={videoRef}
@@ -145,13 +141,13 @@ function TemplateCard({ template, idx }: { template: Template; idx: number }) {
                     </div>
 
                     <div className="w-full lg:w-2/5 space-y-4 text-left">
-                        <span className="text-xs md:text-sm text-sky-200 uppercase tracking-[0.5em]">
+                        <span className="text-xs md:text-sm text-[var(--ink)] uppercase tracking-[0.5em]">
                             {template.tag}
                         </span>
-                        <h3 className="text-3xl font-semibold text-white">
+                        <h3 className="text-3xl font-semibold text-[var(--ink)]">
                             {template.title}
                         </h3>
-                        <p className="text-base md:text-lg text-slate-200/90 leading-relaxed">
+                        <p className="text-base md:text-lg text-[#1f1f1f] leading-relaxed">
                             {template.description}
                         </p>
                         {template.primaryLink && (
@@ -159,7 +155,7 @@ function TemplateCard({ template, idx }: { template: Template; idx: number }) {
                                 href={template.primaryLink.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center text-base font-semibold text-sky-100 hover:text-white transition"
+                                className="inline-flex items-center text-base font-semibold text-[var(--blue)] hover:opacity-70 transition"
                             >
                                 {template.primaryLink.label}
                             </a>
@@ -173,14 +169,14 @@ function TemplateCard({ template, idx }: { template: Template; idx: number }) {
 
 export default function HireMeShowcaseSection() {
     return (
-        <section className="py-20 text-slate-100 px-6">
+        <section className="py-20 px-0">
             <div className="max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-4xl font-semibold text-center mb-12"
+                    className="text-4xl font-semibold text-center mb-12 text-[var(--ink)]"
                 >
                     Need a Site that Looks Like This?
                 </motion.h2>
@@ -190,7 +186,7 @@ export default function HireMeShowcaseSection() {
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center max-w-2xl mx-auto text-slate-300/80 mb-12 text-lg"
+                    className="text-center max-w-2xl mx-auto text-[#1f1f1f] mb-12 text-lg"
                 >
                     These are real client-ready builds from my own toolkit. I tailor each one to match brand, copy, and business goals before launch.
                 </motion.p>
@@ -208,17 +204,15 @@ export default function HireMeShowcaseSection() {
                     viewport={{ once: true }}
                     className="mt-16 text-center"
                 >
-                    <h4 className="text-2xl font-semibold mb-4">
+                    <h4 className="text-2xl font-semibold mb-4 text-[var(--ink)]">
                         Let's build something great together.
                     </h4>
-                    <p className="text-slate-300/80 mb-6">
+                    <p className="text-[#1f1f1f] mb-6">
                         Whether you're launching a brand or need to revamp your online presence - I've got you covered.
                     </p>
                     <Link 
                         href="/hire-me" 
-                        className="inline-block bg-sky-500/90 
-                        text-white px-8 py-3 rounded-full 
-                        font-semibold hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/20"
+                        className="inline-block bg-[var(--blue)] text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all duration-200"
                     >
                        Work With Me
                     </Link>

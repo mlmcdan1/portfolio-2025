@@ -7,7 +7,7 @@ const Contact = () => {
         <span className="text-xs uppercase tracking-[0.4em] text-sky-300">Get In Touch</span>
         <h2 className="text-4xl font-semibold mt-4 mb-6 text-slate-100">Let&apos;s Connect</h2>
         <p className="text-lg text-slate-300/80 mb-6">
-          Have a project in mind or just want to say hello? Feel free to reach out!
+          If you&apos;re hiring for an entry-level role or want to talk about my projects, I&apos;d love to connect.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a

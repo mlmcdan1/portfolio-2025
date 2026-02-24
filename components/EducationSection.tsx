@@ -13,15 +13,11 @@ const educationData: EducationItem[] = [
         content: (
             <>
                 <p>
-                    <strong>Master of Science in IT: Software Engineering</strong> <br/>
-                    Expected Graduation: December 2025
+                    <strong>Master of Science in Software Engineering</strong> <br/>
+                    Graduated: December 2025
                 </p>
                 <p>
-                    At UMGC, this program focuses on advanced software design, devlopment
-                    methodologies, and real-world project management techniques. Students 
-                    gain expertise in areas like agile development, enterprise-scale
-                    solutions, and cutting-edge IT practices, preparing them to lead in an 
-                    ever-evolving tech landscape.
+                    Focused on software design, development methods, and project teamwork with a strong emphasis on building real applications.
                 </p>
             </>
         ),
@@ -35,10 +31,7 @@ const educationData: EducationItem[] = [
                     Graduated: 2023
                 </p>
                 <p>
-                    Completed a versatile curriculum covering various disciplines,
-                    refining research and critical thinking skills. The experience
-                    provided a broad academic foundation, fostering adaptability in 
-                    multiple professional fields.
+                    Completed a broad curriculum that strengthened research, communication, and critical thinking skills.
                 </p>
             </>
         ),
@@ -52,10 +45,7 @@ const educationData: EducationItem[] = [
                     Graduated: November 2022
                 </p>
                 <p>
-                    An immersive bootcamp focusing on MERN-stack applications, modern Web
-                    development best practices, and collaborative coding projects. Gained 
-                    hands-on experience building front-end interfaces and robust back-end 
-                    services. 
+                    An immersive program focused on MERN-stack fundamentals and collaborative coding projects.
                 </p>
             </>
         ),
