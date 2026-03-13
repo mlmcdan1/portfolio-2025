@@ -22,7 +22,7 @@ const templates: Template[] = [
     {
         title: "HVAC Landing Page",
         description: "Perfect for service businesses that need fast quote forms and local SEO.",
-        image: "/templates/hvac-template.png",
+        image: "/templates/hvac-template.webp",
         tag: "Service Business",
         video: "/videos/HVAC_MockUp.mp4",
         videoDelayMs: 2000,
@@ -34,7 +34,7 @@ const templates: Template[] = [
     {
         title: "Fitness Coach Website",
         description: "For trainers, creators, and coaches who need to convert followers into clients.",
-        image: "/templates/fitness-template.png",
+        image: "/templates/fitness-template.webp",
         tag: "Creator/Coach",
         video: "/videos/WorkoutMockup.mp4",
         videoDelayMs: 2000,
@@ -46,7 +46,7 @@ const templates: Template[] = [
     {
         title: "School Program Website",
         description: "Perfect for PTA groups and schools that need to highlight programs, curriculum, and enrollment info.",
-        image: "/templates/realestate-template.png",
+        image: "/templates/realestate-template.webp",
         tag: "Education",
         video: "/videos/schoolMock.mp4",
         videoDelayMs: 2000,
@@ -133,6 +133,7 @@ function TemplateCard({ template, idx }: { template: Template; idx: number }) {
                                     alt={template.title}
                                     width={1200}
                                     height={675}
+                                    sizes="(min-width: 1024px) 60vw, 100vw"
                                     className="absolute inset-0 h-full w-full object-cover"
                                     priority={idx === 0}
                                 />
@@ -169,8 +170,61 @@ function TemplateCard({ template, idx }: { template: Template; idx: number }) {
 
 export default function HireMeShowcaseSection() {
     return (
-        <section className="py-20 px-0">
-            <div className="max-w-7xl mx-auto">
+        <section className="relative py-20 px-0">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10">
+                <svg
+                    className="absolute -left-36 top-8 hidden h-48 w-48 text-[var(--green)] opacity-20 lg:block xl:-left-52"
+                    viewBox="0 0 200 200"
+                    fill="none"
+                >
+                    <path
+                        d="M100 28c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72S139.8 28 100 28z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    />
+                    <path
+                        d="M100 52c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeDasharray="8 10"
+                    />
+                </svg>
+                <svg
+                    className="absolute -right-40 bottom-10 hidden h-40 w-40 text-[var(--red)] opacity-20 lg:block xl:-right-56"
+                    viewBox="0 0 160 160"
+                    fill="none"
+                >
+                    <path
+                        d="M20 80c0-33.1 26.9-60 60-60s60 26.9 60 60-26.9 60-60 60-60-26.9-60-60z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    />
+                    <path
+                        d="M60 80c0-11 9-20 20-20s20 9 20 20-9 20-20 20-20-9-20-20z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeDasharray="5 7"
+                    />
+                </svg>
+                <svg
+                    className="absolute -left-16 top-1/2 hidden h-28 w-36 -translate-y-1/2 opacity-80 lg:block xl:-left-24"
+                    viewBox="0 0 180 140"
+                    fill="none"
+                >
+                    <path d="M16 104l52-68 54 32-20 52z" fill="#ffd84d" stroke="#0b0b0b" strokeWidth="4" />
+                    <path d="M52 82l14 10-16 12 16 12" stroke="#0b0b0b" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="34" cy="92" r="6" fill="#ff6fb0" stroke="#0b0b0b" strokeWidth="3" />
+                </svg>
+                <svg
+                    className="absolute right-10 top-6 hidden h-20 w-40 opacity-85 lg:block xl:right-16"
+                    viewBox="0 0 200 90"
+                    fill="none"
+                >
+                    <rect x="12" y="14" width="176" height="62" rx="30" fill="#90f1ff" stroke="#0b0b0b" strokeWidth="4" />
+                    <path d="M28 46c12-12 24-12 36 0s24 12 36 0 24-12 36 0 24 12 36 0" stroke="#0b0b0b" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+            </div>
+            <div className="relative z-20 max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

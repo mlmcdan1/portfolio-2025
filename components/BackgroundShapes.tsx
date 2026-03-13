@@ -2,7 +2,7 @@ export default function BackgroundShapes() {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       <svg
-        className="absolute -top-16 left-1/2 h-[520px] w-[520px] -translate-x-1/2 opacity-[0.06]"
+        className="absolute -top-20 left-1/2 h-[520px] w-[520px] -translate-x-1/2 opacity-[0.06]"
         viewBox="0 0 520 520"
         fill="none"
         aria-hidden
@@ -17,7 +17,7 @@ export default function BackgroundShapes() {
       </svg>
 
       <svg
-        className="absolute right-[-60px] top-[18%] h-[420px] w-[420px] opacity-[0.08]"
+        className="absolute right-[-140px] top-[16%] h-[420px] w-[420px] opacity-[0.08]"
         viewBox="0 0 420 420"
         fill="none"
         aria-hidden
@@ -29,7 +29,7 @@ export default function BackgroundShapes() {
       </svg>
 
       <svg
-        className="absolute left-[-40px] top-[55%] h-[360px] w-[360px] opacity-[0.05]"
+        className="absolute left-[-140px] top-[55%] h-[360px] w-[360px] opacity-[0.05]"
         viewBox="0 0 360 360"
         fill="none"
         aria-hidden
@@ -39,7 +39,7 @@ export default function BackgroundShapes() {
       </svg>
 
       <svg
-        className="absolute right-[10%] bottom-[-40px] h-[260px] w-[520px] opacity-[0.08]"
+        className="absolute right-[-80px] bottom-[-60px] h-[260px] w-[520px] opacity-[0.08]"
         viewBox="0 0 520 260"
         fill="none"
         aria-hidden

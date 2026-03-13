@@ -30,7 +30,7 @@ export default function CounterSection() {
       className='relative py-18'
       ref={ref}
     >
-      <div className='absolute inset-0 bg-[url("/images/sky-shot.jpg")] bg-cover bg-center opacity-10' aria-hidden />
+      <div className='absolute inset-0 bg-[url("/images/sky-shot.webp")] bg-cover bg-center opacity-10' aria-hidden />
       <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-900/70' aria-hidden />
 
       <div className='relative max-w-6xl mx-auto px-6 md:px-12'>

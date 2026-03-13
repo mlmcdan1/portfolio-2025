@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:wght@400..800&family=Space+Grotesk:wght@300..700&display=swap');
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 @import 'aos/dist/aos.css';
 
@@ -24,6 +24,7 @@ body {
     min-height: 100%;
     background: var(--paper);
     color: var(--ink);
+    overflow-x: hidden;
 }
 
 h1,
@@ -32,6 +33,11 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Archivo Black', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.project-heading {
     font-family: 'Archivo Black', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     letter-spacing: -0.02em;
 }
@@ -57,6 +63,54 @@ h6 {
     border-top: 1px solid var(--border);
 }
 
+.memphis-pattern {
+    background-color: #f8f8f8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%230b0b0b' stroke-opacity='0.35' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 24c7-7 14-7 21 0s14 7 21 0'/%3E%3Cpath d='M74 42c7-7 14-7 21 0s14 7 21 0'/%3E%3Cpath d='M18 86c7-7 14-7 21 0s14 7 21 0'/%3E%3Cpath d='M82 102c7-7 14-7 21 0s14 7 21 0'/%3E%3Cpath d='M26 58c0 7 7 14 14 14s14-7 14-14'/%3E%3Cpath d='M88 70c0 7 7 14 14 14s14-7 14-14'/%3E%3C/g%3E%3Cg fill='%230b0b0b' fill-opacity='0.35'%3E%3Ccircle cx='32' cy='114' r='2'/%3E%3Ccircle cx='60' cy='16' r='2'/%3E%3Ccircle cx='108' cy='118' r='2'/%3E%3Ccircle cx='104' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 140px 140px;
+}
+
+.memphis-pop {
+    background-color: #2ea3e6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Crect width='220' height='220' fill='none'/%3E%3Cg stroke='none'%3E%3Cpath d='M20 30l40-10 20 30-30 30-30-10z' fill='%23ff6fb0'/%3E%3Cpath d='M150 20l50 18-28 40-44-20z' fill='%23a7e46b'/%3E%3Cpath d='M40 150l60-22 22 40-46 28z' fill='%23ffd84d'/%3E%3Cpath d='M150 140l48 20-18 44-50-16z' fill='%2390f1ff'/%3E%3Ccircle cx='60' cy='96' r='10' fill='%230b0b0b'/%3E%3Ccircle cx='170' cy='96' r='8' fill='%230b0b0b'/%3E%3Cpath d='M90 60l14 10-16 12 16 12' fill='none' stroke='%230b0b0b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M30 110c10-10 20-10 30 0s20 10 30 0' fill='none' stroke='%23ffb347' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M120 184c10-10 20-10 30 0s20 10 30 0' fill='none' stroke='%23ff6fb0' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M132 104l10 12-12 10 12 12' fill='none' stroke='%230b0b0b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 200l40-18 20 20-20 18z' fill='%23ffffff' fill-opacity='0.85'/%3E%3Cpath d='M180 60l30-12 8 20-18 18z' fill='%23ffffff' fill-opacity='0.85'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 220px 220px;
+}
+
+.theme-on-paper {
+    --ink: #0b0b0b;
+    --muted: #2f2f2f;
+}
+
+.theme-on-blue {
+    --ink: #f8fbff;
+    --muted: #e4efff;
+}
+
+.full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+@media (max-width: 640px) {
+    .full-bleed {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Disable scroll animations on mobile */
+    [data-aos] {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
 .color-red { color: var(--red); }
 .color-green { color: var(--green); }
 .color-blue { color: var(--blue); }
@@ -73,4 +127,12 @@ h6 {
 
 .focus-ring:focus-visible {
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }

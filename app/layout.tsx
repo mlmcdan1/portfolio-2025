@@ -2,6 +2,13 @@ import './globals.css';
 import SidebarNav from '@/components/SidebarNav';
 import BackgroundShapes from '@/components/BackgroundShapes';
 
+export const metadata = {
+  icons: {
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -9,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="relative min-h-screen bg-[var(--paper)]">
           <SidebarNav />
           <BackgroundShapes />
-          <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-10 sm:px-8">
+          <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-20 sm:pt-20 sm:px-8">
             {children}
           </main>
         </div>

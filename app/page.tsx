@@ -18,10 +18,19 @@ export default function Page() {
       <div className="flex flex-col gap-8 pb-20">
         <Hero />
         <AboutPanel />
-        <MarqueeBand />
-        <ProjectSection />
+        <div className="relative full-bleed memphis-pattern theme-on-paper py-10">
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-12">
+            <MarqueeBand />
+            <ProjectSection />
+          </div>
+        </div>
         <HireMeShowcaseSection />
-        <EducationList />
+        <div className="relative full-bleed memphis-pop theme-on-blue py-10">
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-12">
+            <MarqueeBand word="education" />
+            <EducationList />
+          </div>
+        </div>
         <Footer />
       </div>
     </AOSWrapper>

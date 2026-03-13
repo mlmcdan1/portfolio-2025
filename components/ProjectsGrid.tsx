@@ -5,32 +5,32 @@ const projects = [
     title: "Smart Movie AI",
     description: "A Netflix-inspired discovery app with search, previews, and fast filtering.",
     tags: ["Next.js", "TypeScript", "TMDb"],
-    image: "/images/smart_movieai.png",
+    image: "/images/smart_movieai.webp",
     featured: true,
   },
   {
     title: "Weather Dashboard",
     description: "Clean, mobile-friendly forecast view with city search and live data.",
     tags: ["React", "Tailwind", "OpenWeather"],
-    image: "/images/weather_Dashboard.png",
+    image: "/images/weather_Dashboard.webp",
   },
   {
     title: "Disney+ UI Clone",
     description: "Streaming-style UI with auth flows and component-driven layouts.",
     tags: ["React", "Firebase", "Redux"],
-    image: "/images/DisneyPlus.png",
+    image: "/images/DisneyPlus.webp",
   },
   {
     title: "Ecommerce API",
     description: "REST API for products, users, and orders with JWT auth.",
     tags: ["Node", "Express", "MongoDB"],
-    image: "/images/BackendAPI.png",
+    image: "/images/BackendAPI.webp",
   },
   {
     title: "Workday Planner",
     description: "Daily schedule app with local storage and quick edits.",
     tags: ["JavaScript", "jQuery", "Bootstrap"],
-    image: "/images/Schedule.png",
+    image: "/images/Schedule.webp",
   },
 ];
 
@@ -70,6 +70,7 @@ export default function ProjectsGrid() {
                 alt={project.title}
                 width={900}
                 height={600}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 className="h-48 w-full object-cover sm:h-56"
               />
             </div>

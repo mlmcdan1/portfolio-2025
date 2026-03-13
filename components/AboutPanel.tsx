@@ -14,7 +14,7 @@ export default function AboutPanel() {
         <div className="absolute right-10 top-10 h-3 w-3 rounded-full border border-black/20" />
         <div className="absolute left-10 bottom-10 h-3 w-3 rounded-full border border-black/20" />
         <svg
-          className="pointer-events-none absolute left-8 top-6 hidden h-16 w-24 opacity-80 sm:block"
+          className="pointer-events-none absolute -left-20 top-2 hidden h-16 w-24 opacity-80 sm:block xl:-left-32"
           viewBox="0 0 120 80"
           fill="none"
           aria-hidden
@@ -22,7 +22,7 @@ export default function AboutPanel() {
           <path d="M6 40c10-10 20-10 30 0s20 10 30 0 20-10 30 0" stroke="#e54b4b" strokeWidth="3" strokeLinecap="round" />
         </svg>
         <svg
-          className="pointer-events-none absolute right-8 bottom-6 hidden h-16 w-24 opacity-80 sm:block"
+          className="pointer-events-none absolute -right-20 bottom-2 hidden h-16 w-24 opacity-80 sm:block xl:-right-32"
           viewBox="0 0 120 80"
           fill="none"
           aria-hidden
@@ -31,21 +31,22 @@ export default function AboutPanel() {
         </svg>
 
         <div className="relative mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative flex items-center justify-center">
+          <div className="relative hidden sm:flex items-center justify-center">
             <div className="absolute h-56 w-56 rounded-full border border-black/10" />
             <div className="relative h-56 w-56 overflow-hidden rounded-full border border-black/15 bg-white">
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile.webp"
                 alt="Matthew McDaniel"
                 width={400}
                 height={400}
+                sizes="224px"
                 className="h-full w-full object-cover"
               />
             </div>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">About</p>
-            <h2 className="mt-4 text-3xl sm:text-4xl text-[var(--ink)]">
+            <h2 className="mt-4 text-4xl sm:text-4xl text-[var(--ink)]">
               Grounded in fundamentals, focused on shipping.
             </h2>
             <p className="mt-5 text-base sm:text-lg text-[var(--muted)]">

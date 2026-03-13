@@ -65,15 +65,7 @@ export default function EducationSection() {
             className='py-16 px-4 sm:px-8'
         >
             <div className='max-w-3xl mx-auto'>
-                {/* Heading */}
-                <div className='mb-12 text-center'>
-                    <span className='block text-sky-300 text-xs uppercase tracking-[0.4em] mb-3'>
-                        Education
-                    </span>
-                    <h2 className='text-4xl font-semibold text-slate-100'>
-                        Education
-                    </h2>
-                </div>
+               
 
                 {/* Accordion Panels */}
                 <div>
